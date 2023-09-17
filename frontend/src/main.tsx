@@ -10,7 +10,9 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <Provider store={store}>
       <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
-        <App />
+        <div className="sm:p-8">
+          <App />
+        </div>
       </ThemeProvider>
     </Provider>
   </React.StrictMode>

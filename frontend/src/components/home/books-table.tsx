@@ -66,7 +66,7 @@ const BooksTable = ({ books }: { books: Book[] }) => {
             <TableRow
               key={book._id}
               className={`h-8 cursor-pointer ${
-                selectedBook === book._id ? 'bg-gray-100' : ''
+                selectedBook === book._id ? 'bg-muted' : ''
               }`}
               onClick={() => {
                 setSelectedBook(book._id!);

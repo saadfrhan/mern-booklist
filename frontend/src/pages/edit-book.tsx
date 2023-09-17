@@ -11,11 +11,9 @@ const EditBook = () => {
 
   const { data } = useGetBookByIdQuery(id!);
 
-  const [title, setTitle] = useState(data?.title ? data.title : '');
-  const [author, setAuthor] = useState(data?.author ? data.author : '');
-  const [publishedYear, setPublishedYear] = useState(
-    data?.publishedYear ? data.publishedYear : ''
-  );
+  const [title, setTitle] = useState(data?.title);
+  const [author, setAuthor] = useState(data?.author);
+  const [publishedYear, setPublishedYear] = useState(data?.publishedYear);
   const navigate = useNavigate();
 
   const [updateBook] = useUpdateBookMutation();
@@ -49,15 +47,15 @@ const EditBook = () => {
             <Input
               type="number"
               value={publishedYear}
-              onChange={(e) => setPublishedYear(e.target.value)}
+              onChange={(e) => setPublishedYear(Number(e.target.value))}
             />
           </div>
           <Button
             onClick={() => {
               updateBook({
                 _id: id ? id : 'Invalid Id',
-                title,
-                author,
+                title: title ?? '',
+                author: author ?? '',
                 publishedYear: Number(publishedYear),
               });
               navigate('/');

@@ -21,9 +21,8 @@ export default function Home() {
 
   return (
     <div className="p-4 space-y-4">
-      <div className="flex items-center justify-center gap-x-4"></div>
       <div className="flex items-center justify-between">
-        <h1 className="text-4xl font-extrabold tracking-tight scroll-m-20 lg:text-5xl">
+        <h1 className="text-4xl font-extrabold tracking-tight max-sm:text-xl scroll-m-20 lg:text-5xl">
           Books List
         </h1>
         <div className="flex gap-2">

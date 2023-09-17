@@ -39,7 +39,7 @@ export default function CreateBook() {
             />
           </div>
           <div>
-            <Label>Publish Year</Label>
+            <Label>Published year</Label>
             <Input
               type="number"
               value={publishedYear}
