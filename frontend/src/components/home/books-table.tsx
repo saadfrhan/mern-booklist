@@ -54,7 +54,7 @@ const BooksTable = ({ books }: { books: Book[] }) => {
       )}
       <Table>
         <TableHeader>
-          <TableRow>
+          <TableRow className="hover:bg-transparent">
             <TableHead>No</TableHead>
             <TableHead>Title</TableHead>
             <TableHead className="max-md:hidden">Author</TableHead>
@@ -65,7 +65,9 @@ const BooksTable = ({ books }: { books: Book[] }) => {
           {books.map((book, index) => (
             <TableRow
               key={book._id}
-              className="h-8"
+              className={`h-8 cursor-pointer ${
+                selectedBook === book._id ? 'bg-gray-100' : ''
+              }`}
               onClick={() => {
                 setSelectedBook(book._id!);
               }}
