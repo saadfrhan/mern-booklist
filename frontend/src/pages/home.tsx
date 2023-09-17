@@ -11,7 +11,12 @@ export default function Home() {
 
   const { data, isLoading } = useGetBooksQuery();
 
-  if (isLoading) return <div>Loading...</div>;
+  if (isLoading)
+    return (
+      <div className="flex items-center justify-center h-screen">
+        Loading...
+      </div>
+    );
 
   return (
     <div className="p-4 space-y-4">

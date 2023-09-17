@@ -9,9 +9,7 @@ import {
   AlertDialogTitle,
   AlertDialogTrigger,
 } from '@/components/ui/alert-dialog';
-import { Button } from '@/components/ui/button';
-import { Trash } from 'lucide-react';
-import axios from 'axios';
+import { useDeleteBookMutation } from '@/services/book';
 
 export default function DeleteDialog({
   _id,
@@ -20,11 +18,7 @@ export default function DeleteDialog({
   _id: string;
   children: React.ReactNode;
 }) {
-  async function handleDeleteBook() {
-    try {
-      await axios.delete(`http://localhost:5555/books/${_id}`);
-    } catch (error) {}
-  }
+  const [deleteBook] = useDeleteBookMutation();
 
   return (
     <AlertDialog>
@@ -38,7 +32,11 @@ export default function DeleteDialog({
         </AlertDialogHeader>
         <AlertDialogFooter>
           <AlertDialogCancel>Cancel</AlertDialogCancel>
-          <AlertDialogAction onClick={handleDeleteBook}>
+          <AlertDialogAction
+            onClick={() => {
+              deleteBook(_id);
+            }}
+          >
             Delete
           </AlertDialogAction>
         </AlertDialogFooter>
