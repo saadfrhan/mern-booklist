@@ -5,6 +5,7 @@ import BooksTable from '@/components/home/books-table';
 import { Button, buttonVariants } from '@/components/ui/button';
 import { LayoutGridIcon, PlusCircle, TableIcon } from 'lucide-react';
 import { useGetBooksQuery } from '@/services/book';
+import { ThemeToggler } from '@/components/theme-toggler';
 
 export default function Home() {
   const [showType, setShowType] = useState('table');
@@ -20,26 +21,32 @@ export default function Home() {
 
   return (
     <div className="p-4 space-y-4">
-      <div className="flex items-center justify-center gap-x-4">
-        <Button onClick={() => setShowType('table')} size="icon">
-          <TableIcon className="w-4 h-4" />
-        </Button>
-        <Button onClick={() => setShowType('card')} size="icon">
-          <LayoutGridIcon className="w-4 h-4" />
-        </Button>
-      </div>
+      <div className="flex items-center justify-center gap-x-4"></div>
       <div className="flex items-center justify-between">
         <h1 className="text-4xl font-extrabold tracking-tight scroll-m-20 lg:text-5xl">
           Books List
         </h1>
-        <Link
-          to="/books/create"
-          className={buttonVariants({
-            size: 'icon',
-          })}
-        >
-          <PlusCircle className="w-4 h-4" />
-        </Link>
+        <div className="flex gap-2">
+          <ThemeToggler />
+          <Button
+            onClick={() => setShowType(showType === 'table' ? 'card' : 'table')}
+            size="icon"
+          >
+            {showType === 'table' ? (
+              <TableIcon className="w-4 h-4" />
+            ) : (
+              <LayoutGridIcon className="w-4 h-4" />
+            )}
+          </Button>
+          <Link
+            to="/books/create"
+            className={buttonVariants({
+              className: 'flex items-center justify-center gap-x-2',
+            })}
+          >
+            <PlusCircle className="w-4 h-4" /> New
+          </Link>
+        </div>
       </div>
       {data &&
         (showType === 'table' ? (
