@@ -1,10 +1,10 @@
-# Booklist
+# Bookshelf
 
 ![Bookstore](./preview.png)
 
 ## Introduction
 
-Using React, Node.js, Express & MongoDB you'll learn how to build a Full Stack MERN Application - from start to finish. The App is called "Booklist" and it is a simple app that allows you to add books to a list, delete them and update them. It's a good way to learn full stack development because you can build and deploy this app to the web.
+Using React, Node.js, Express & MongoDB you'll learn how to build a Full Stack MERN Application - from start to finish. The App is called "Bookshelf" and it is a simple app that allows you to add books to a list, delete them and update them. It's a good way to learn full stack development because you can build and deploy this app to the web.
 
 With this, you will have a strong understanding of how the MERN Stack works.
 
