@@ -23,7 +23,7 @@ export default function Home() {
     <div className="p-4 space-y-4">
       <div className="flex items-center justify-between">
         <h1 className="text-4xl font-extrabold tracking-tight max-sm:text-xl scroll-m-20 lg:text-5xl">
-          Books List
+          Bookshelf
         </h1>
         <div className="flex gap-2">
           <ThemeToggler />
